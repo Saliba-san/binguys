@@ -1,0 +1,4 @@
+#!/bin/sh
+strength=$(nmcli -g "IN-USE,BARS" d wifi list | grep \* | sed "s/*:/ /")
+icon="W:"
+printf "|%s%s|\\n" "$icon" "$strength"

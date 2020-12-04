@@ -1,0 +1,5 @@
+#!/bin/sh
+solidtype=$(ls $HOME/Projects/solids/solids/ | shuf -n 1) 
+solid=$(ls $HOME/Projects/solids/solids/$solidtype/ | shuf -n 1)
+printf "\033[01;33m";
+$HOME/Projects/solids/solidmaker < $HOME/Projects/solids/solids/$solidtype/$solid

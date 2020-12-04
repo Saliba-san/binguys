@@ -1,0 +1,2 @@
+#!/bin/sh
+eplot --dumb 2> /dev/null

@@ -1,0 +1,4 @@
+#!/bin/sh
+printf "\033[01;33m";
+ruby ~/Projects/quineclock/quineclock.rb
+

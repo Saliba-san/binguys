@@ -1,0 +1,5 @@
+#!/bin/bash
+usd=$(curl 'brl.rate.sx/1USD')
+jpy=$(curl 'brl.rate.sx/1JPY')
+printf "|$%.4s, ¥%.6s| \\n" "${usd::4}" "${jpy::6}" 
+

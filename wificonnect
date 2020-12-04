@@ -1,0 +1,17 @@
+#!/bin/sh
+nome=$(nmcli -g SSID d wifi list | mydmenu);
+read -p "Senha: " senha;
+echo "\\nVocê quer conectar a rede $nome?"
+read -p "[y/n]: " yesno;
+
+case $yesno in
+ y) nmcli d wifi connect "$nome" password "$senha"
+    if [ $? -eq 0 ]; then
+         echo "\\nConectado: "
+         nmcli -g "SSID,BARS" d wifi list | grep "$nome" | sed "s/:/: /1"
+    else
+         echo "Senha errada"
+    fi;;
+ n) echo "\\nNão conectei não, sô";;
+ *) echo "\\nNão conectei não, sô";;
+esac

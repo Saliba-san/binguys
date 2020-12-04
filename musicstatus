@@ -1,0 +1,14 @@
+#!/bin/bash
+res=$(mocp -i 2>/dev/null);
+case ${?} in
+  0) {
+    state=$(echo "$res" | head -n1 | sed "s/State: //; s/PAUSE/ll/; s/STOP/X/; s/PLAY/>/;")
+    title=$(echo "$res" | sed -n 5p | sed "s/SongTitle: //" | head -c 23)
+    time=$(echo "$res" | grep "Time:" | tac | tr -d '\n' | sed "s/CurrentTime: /[/; s/TotalTime: / - /")
+    printf "| %s %s %s]| \\n " "$state" "$title" "$time"
+  };;
+
+  *) {
+    printf " "
+  }
+esac

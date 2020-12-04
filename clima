@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case $1 in
+  hoje) curl -s wttr.in | sed -n 8,17p; echo;;
+  amanha) curl -s wttr.in | sed -n 18,27p; echo;;
+  depoisdeamanha) curl -s wttr.in | sed -n 28,38p;;
+  *) curl -s wttr.in | sed -n 2,7p; echo;;
+esac

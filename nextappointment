@@ -1,0 +1,3 @@
+#!/bin/sh
+nextapnt=$(calcurse -n | tail -1)
+printf "%s  \\n" "$nextapnt"

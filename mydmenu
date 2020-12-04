@@ -1,0 +1,2 @@
+#!/bin/sh
+dmenu -m "0" -fn "Times New Roman-11:antialias=true:autohint=true" -nb "#282828" -nf "#928373" -sb "#282828" -sf "#d79921" 

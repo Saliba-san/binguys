@@ -1,0 +1,10 @@
+#!/bin/sh
+# compila o arquivo *.Rnw gerando um *.tex
+echo "library(tools); Sweave(paste(\"$1\",'.Rnw', sep=''))" | R --no-save --no-restore;
+# compila o arquivo *.tex gerando um arquivo *.dvi
+latex $1.tex
+# compila o arquivo *.bib que contém as bibliografias
+bibtex $1
+# compila o arquivo *.tex gerando um arquivo *.pdf
+pdflatex $1.tex
+
